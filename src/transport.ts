@@ -114,9 +114,7 @@ export default class SentryTransport extends TransportStream {
 
     const customLevelsMap = Object.keys(options).reduce(
       (acc: { [key: string]: any }, winstonSeverity: string) => {
-        acc[winstonSeverity] = Sentry.Severity.fromString(
-          options[winstonSeverity]
-        );
+        acc[winstonSeverity] = options[winstonSeverity];
         return acc;
       },
       {}
